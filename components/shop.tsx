@@ -1,6 +1,6 @@
 "use client"
 
-import { useCart } from "./cart-provider"
+import { useCart } from "@/components/cart-provider"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card"
 import { Button } from "./ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select"
@@ -29,7 +29,7 @@ const PRODUCTS = {
   ],
   accesorios: [
     { id: "a1", name: "Molino Manual", price: 45000, img: "/manual-coffee-grinder.jpg" },
-    { id: "a2", name: "Prensa Francesa 350ml (Plástica)", price: 23000, img: "/french-press-350ml.jpg" },
+    { id: "a2", name: "Prensa Francesa 350ml (Plástica)", price: 23000, img: "/french-press-350ml.jpg" }, 
     { id: "a3", name: "Prensa Francesa 600ml (Plástica)", price: 28990, img: "/french-press-600ml.jpg" },
     { id: "a4", name: "Prensa Francesa 600ml (Metálica)", price: 38990, img: "/french-press-metal-600ml.jpg" },
     
@@ -98,7 +98,10 @@ function ProductCard({ product, onAdd, selectedVar, onVarChange }: any) {
         />
       </div>
       <CardHeader>
-        <CardTitle className="text-xl font-medium">{product.name}</CardTitle>
+        <CardTitle className="text-xl font-medium line-clamp-2 h-14">
+  {product.name}
+</CardTitle>
+
         <p className="text-primary font-bold text-lg">${product.price.toLocaleString()}</p>
       </CardHeader>
       <CardContent>
@@ -119,11 +122,21 @@ function ProductCard({ product, onAdd, selectedVar, onVarChange }: any) {
       </CardContent>
       <CardFooter>
         <Button
-          className="w-full"
-          onClick={() => onAdd({ ...product, quantity: 1, variation: selectedVar || product.variations?.[0] })}
-        >
-          Añadir al Carrito
-        </Button>
+  className="w-full bg-primary hover:bg-primary/90 text-white font-semibold
+             transition-all duration-300 ease-out
+             hover:scale-[1.03] active:scale-[0.97]
+             shadow-md hover:shadow-lg"
+  onClick={() =>
+    onAdd({
+      ...product,
+      quantity: 1,
+      variation: selectedVar || product.variations?.[0],
+    })
+  }
+>
+  🛒 Añadir al carrito
+</Button>
+
       </CardFooter>
     </Card>
   )

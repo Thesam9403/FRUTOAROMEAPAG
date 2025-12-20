@@ -11,11 +11,11 @@ export function Hero() {
       <div className="relative z-10 text-center text-white px-4 max-w-3xl">
         <h1 className="text-5xl md:text-7xl mb-6">Rituales de Conexión</h1>
         <p className="text-lg md:text-xl font-light opacity-90 mb-8 text-pretty">
-          Desde las montañas de Salgar, Antioquia, traemos el alma del campo a tu taza. Café lavado y secado con la
+          Desde las montañas de Antioquia, traemos el alma del campo a tu taza. Café lavado y secado con la
           tradición de nuestra tierra.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#tienda" className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all">
+          <a href="#tienda" className="bg-white/20 hover:bg-white/30 text-white px-8 py-3 rounded-full transition-all">
             Explorar Productos
           </a>
           <a
