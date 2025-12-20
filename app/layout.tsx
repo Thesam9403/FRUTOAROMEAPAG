@@ -1,15 +1,14 @@
-import type { Metadata } from "next"
 import "./globals.css"
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Fruto Aromea | Ritual · Bienestar · Conexión",
   description:
-    "Productos naturales para iniciar el día y crear momentos de conexión. Café, infusiones y rituales artesanales desde Antioquia.",
-
- openGraph: {
+    "Productos naturales desde Antioquia — café, infusiones y accesorios diseñados para tu ritual diario.",
+  openGraph: {
     title: "Fruto Aromea | Ritual · Bienestar · Conexión",
     description:
-      "Café, infusiones y rituales naturales desde Antioquia.",
+      "Disfruta productos naturales que conectan cuerpo y mente. Café, infusiones, accesorios.",
     url: "https://frutoaromeacol.vercel.app",
     siteName: "Fruto Aromea",
     images: [
@@ -17,20 +16,15 @@ export const metadata: Metadata = {
         url: "https://frutoaromeacol.vercel.app/og/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Fruto Aromea – Productos Naturales",
+        alt: "Fruto Aromea – Productos naturales",
       },
     ],
     locale: "es_CO",
     type: "website",
   },
-
   icons: {
     icon: "/favicon.ico",
   },
-  openGraph: {
-  images: ["https://frutoaromeacol.vercel.app/og/og-image.jpg"]
-
-}
 }
 
 export default function RootLayout({
@@ -40,8 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="antialiased">{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
-
