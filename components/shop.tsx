@@ -5,18 +5,29 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card"
 import { Button } from "./ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select"
 import { useState } from "react"
+import { ProductImage } from "@/components/product-image"
 
 const PRODUCTS = {
   cafe: [
     { id: "c1", 
-      name: "Café Fruto Aromea 500g",
+      name: "Café Fruto Aromea 500g tostion media",
       price: 56000 ,
       benefit: "Granos de café 100% arábica, cultivados en Salgar, Antioquia, con notas de chocolate y frutos amarillos.", 
-      img: "/coffee-bag-500g.jpg" },
+      variations: ["En grano", "Molido"],
+      images: ["/products/coffee/cafe-500g-1.jpg", 
+        "/products/coffee/cafe-500g-2.jpg"] },
     { id: "c2", 
-      name: "Café Fruto Aromea 250g",
+      name: "Café Fruto Aromea 250g tostion media",
       benefit: "Perfecto para disfrutar de una taza fresca y aromática en cualquier momento del día.", 
-      price: 31000, img: "/coffee-bag-250g.jpg" },
+      price: 31000, 
+      variations: ["En grano", "Molido"],
+      images: ["/products/coffee/cafe-250g-1.jpg", "/products/coffee/cafe-250g-2.jpg"] },
+      { id: "c3", 
+      name: "Aromea Café 250g tostion media",
+      benefit: "Perfecto para disfrutar de una taza fresca y aromática en cualquier momento del día.", 
+      price: 31000, 
+      variations: ["Molido"],
+      images: ["/products/coffee/arome-cafe-250g-1.jpg"] },
   ],
   infusiones: [
     {
@@ -24,41 +35,31 @@ const PRODUCTS = {
       name: "Infusión Frutos Rojos",
       price: 19500,
       benefit: "Antioxidante natural que ayuda a fortalecer el sistema inmunológico.",
-      variations: ["Con Stevia", "Con Canela", "Original"],
-      img: "/red-fruits-infusion.jpg",
+      variations: ["Con Stevia", "Con Canela", "Con flor de jamaica"],
+      images: ["/products/infusions/frutos-rojos-1.jpg", "/products/infusions/frutos-rojos-2.jpg"],
     },
     {
       id: "i2",
       name: "Infusión Frutos Amarillos",
       price: 19500,
       benefit: "Fuente natural de vitamina C que contribuye al bienestar general.",
-      variations: ["Con Canela", "Original"],
-      img: "/yellow-fruits-infusion.jpg",
+      variations: ["Con Canela", "Con limoncillo"],
+      images: ["/products/infusions/frutos-amarillos-1.jpg", "/products/infusions/frutos-amarillos-2.jpg"],
     },
   ],
   accesorios: [
-{
-  id: "a1",
-  name: "Molino Manual",
-  benefit: "Muele tu café fresco y conecta con el ritual",
-  price: 45000,
-  img: "/manual-coffee-grinder.jpg"
-},
-    { id: "a2", name: "Prensa Francesa 350ml (Plástica)", 
+
+    { id: "a1", name: "Prensa Francesa 350ml (Plástica)", 
       price: 23000,
       benefit: "Ideal para preparar una taza individual de café o infusión, perfecta para tus momentos de conexión.",
-      img: "/french-press-350ml.jpg" }, 
-    { id: "a3", 
+      images: ["/products/accessories/prensa-350-1.jpg", "/products/accessories/prensa-350-2.jpg"] }, 
+    { id: "a2", 
       name: "Prensa Francesa 600ml (Plástica)"
       , price: 28990, 
       benefit: "Perfecta para preparar café para compartir en tus momentos de conexión.",
-      img: "/french-press-600ml.jpg" },
-    { id: "a4",
-      name: "Prensa Francesa 600ml (Metálica)", 
-      price: 38990,
-      benefit: "Duradera y elegante, ideal para preparar café en tus rituales diarios.",
-      img: "/french-press-metal-600ml.jpg" },
-    
+      images: ["/products/accessories/prensa-600-1.jpg", 
+        "/products/accessories/prensa-600-2.jpg", 
+        "/products/accessories/prensa-600-3.jpg"] },
   ],
 }
 
@@ -117,12 +118,19 @@ function ProductCard({ product, onAdd, selectedVar, onVarChange }: any) {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow bg-background">
       <div className="aspect-square overflow-hidden">
-        <img
-          src={product.img || "/placeholder.svg"}
-          alt={product.name}
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-        />
-      </div>
+  {product.images ? (
+    <ProductImage images={product.images} name={product.name} />
+  ) : (
+    <img
+      src={product.img || "/placeholder.svg"}
+      alt={product.name}
+      className="w-full h-full object-cover
+                 transition-all duration-500
+                 hover:scale-105"
+    />
+  )}
+</div>
+
       <CardHeader>
         <CardTitle className="text-xl font-medium line-clamp-2 h-14">
   {product.name}

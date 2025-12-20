@@ -56,3 +56,8 @@ export function Hero() {
     </section>
   )
 }
+<img
+  src="/hero/hero-bg.jpg"
+  alt="Cafetales de Antioquia"
+  className="w-full h-full object-cover"
+/>
