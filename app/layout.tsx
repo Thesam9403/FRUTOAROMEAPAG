@@ -6,27 +6,30 @@ export const metadata: Metadata = {
   description:
     "Productos naturales para iniciar el día y crear momentos de conexión. Café, infusiones y rituales artesanales desde Antioquia.",
 
-  openGraph: {
-    title: "Fruto Aromea",
+ openGraph: {
+    title: "Fruto Aromea | Ritual · Bienestar · Conexión",
     description:
-      "Ritual · Bienestar · Conexión. Productos naturales para cada momento del día.",
+      "Café, infusiones y rituales naturales desde Antioquia.",
+    url: "https://frutoaromeacol.vercel.app",
+    siteName: "Fruto Aromea",
     images: [
       {
-        url: "/og-fruto-aromea.jpg",
+        url: "https://frutoaromeacol.vercel.app/og/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Fruto Aromea – Productos naturales",
+        alt: "Fruto Aromea – Productos Naturales",
       },
     ],
-    type: "website",
     locale: "es_CO",
+    type: "website",
   },
 
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
-  images: ["/og/og-image.jpg"],
+  images: ["https://frutoaromeacol.vercel.app/og/og-image.jpg"]
+
 }
 }
 
