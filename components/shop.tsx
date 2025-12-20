@@ -8,14 +8,22 @@ import { useState } from "react"
 
 const PRODUCTS = {
   cafe: [
-    { id: "c1", name: "Café Fruto Aromea 500g", price: 56000, img: "/coffee-bag-500g.jpg" },
-    { id: "c2", name: "Café Fruto Aromea 250g", price: 31000, img: "/coffee-bag-250g.jpg" },
+    { id: "c1", 
+      name: "Café Fruto Aromea 500g",
+      price: 56000 ,
+      benefit: "Granos de café 100% arábica, cultivados en Salgar, Antioquia, con notas de chocolate y frutos amarillos.", 
+      img: "/coffee-bag-500g.jpg" },
+    { id: "c2", 
+      name: "Café Fruto Aromea 250g",
+      benefit: "Perfecto para disfrutar de una taza fresca y aromática en cualquier momento del día.", 
+      price: 31000, img: "/coffee-bag-250g.jpg" },
   ],
   infusiones: [
     {
       id: "i1",
       name: "Infusión Frutos Rojos",
       price: 19500,
+      benefit: "Antioxidante natural que ayuda a fortalecer el sistema inmunológico.",
       variations: ["Con Stevia", "Con Canela", "Original"],
       img: "/red-fruits-infusion.jpg",
     },
@@ -23,15 +31,33 @@ const PRODUCTS = {
       id: "i2",
       name: "Infusión Frutos Amarillos",
       price: 19500,
+      benefit: "Fuente natural de vitamina C que contribuye al bienestar general.",
       variations: ["Con Canela", "Original"],
       img: "/yellow-fruits-infusion.jpg",
     },
   ],
   accesorios: [
-    { id: "a1", name: "Molino Manual", price: 45000, img: "/manual-coffee-grinder.jpg" },
-    { id: "a2", name: "Prensa Francesa 350ml (Plástica)", price: 23000, img: "/french-press-350ml.jpg" }, 
-    { id: "a3", name: "Prensa Francesa 600ml (Plástica)", price: 28990, img: "/french-press-600ml.jpg" },
-    { id: "a4", name: "Prensa Francesa 600ml (Metálica)", price: 38990, img: "/french-press-metal-600ml.jpg" },
+{
+  id: "a1",
+  name: "Molino Manual",
+  benefit: "Muele tu café fresco y conecta con el ritual",
+  price: 45000,
+  img: "/manual-coffee-grinder.jpg"
+},
+    { id: "a2", name: "Prensa Francesa 350ml (Plástica)", 
+      price: 23000,
+      benefit: "Ideal para preparar una taza individual de café o infusión, perfecta para tus momentos de conexión.",
+      img: "/french-press-350ml.jpg" }, 
+    { id: "a3", 
+      name: "Prensa Francesa 600ml (Plástica)"
+      , price: 28990, 
+      benefit: "Perfecta para preparar café para compartir en tus momentos de conexión.",
+      img: "/french-press-600ml.jpg" },
+    { id: "a4",
+      name: "Prensa Francesa 600ml (Metálica)", 
+      price: 38990,
+      benefit: "Duradera y elegante, ideal para preparar café en tus rituales diarios.",
+      img: "/french-press-metal-600ml.jpg" },
     
   ],
 }
@@ -101,7 +127,9 @@ function ProductCard({ product, onAdd, selectedVar, onVarChange }: any) {
         <CardTitle className="text-xl font-medium line-clamp-2 h-14">
   {product.name}
 </CardTitle>
-
+<p className="text-sm text-muted-foreground mt-1 line-clamp-2 min-h-[40px]">
+  {product.benefit}
+</p>
         <p className="text-primary font-bold text-lg">${product.price.toLocaleString()}</p>
       </CardHeader>
       <CardContent>
@@ -134,7 +162,7 @@ function ProductCard({ product, onAdd, selectedVar, onVarChange }: any) {
     })
   }
 >
-  🛒 Añadir al carrito
+  🛒 Agregar a mi ritual
 </Button>
 
       </CardFooter>
