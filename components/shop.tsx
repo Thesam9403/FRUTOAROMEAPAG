@@ -55,7 +55,7 @@ const PRODUCTS = {
       images: ["/products/accessories/prensa-350-1.jpg", "/products/accessories/prensa-350-2.jpg"] }, 
     { id: "a2", 
       name: "Prensa Francesa 600ml (Plástica)"
-      , price: 28990, 
+      , price: 31000, 
       benefit: "Perfecta para preparar café para compartir en tus momentos de conexión.",
       images: ["/products/accessories/prensa-600-1.jpg", 
         "/products/accessories/prensa-600-2.jpg", 
