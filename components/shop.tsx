@@ -15,14 +15,14 @@ const PRODUCTS = {
     {
       id: "i1",
       name: "Infusión Frutos Rojos",
-      price: 15000,
+      price: 19500,
       variations: ["Con Stevia", "Con Canela", "Original"],
       img: "/red-fruits-infusion.jpg",
     },
     {
       id: "i2",
       name: "Infusión Frutos Amarillos",
-      price: 15000,
+      price: 19500,
       variations: ["Con Canela", "Original"],
       img: "/yellow-fruits-infusion.jpg",
     },
@@ -30,8 +30,9 @@ const PRODUCTS = {
   accesorios: [
     { id: "a1", name: "Molino Manual", price: 45000, img: "/manual-coffee-grinder.jpg" },
     { id: "a2", name: "Prensa Francesa 350ml (Plástica)", price: 23000, img: "/french-press-350ml.jpg" },
-    { id: "a3", name: "Prensa Francesa 600ml (Plástica)", price: 28790, img: "/french-press-600ml.jpg" },
+    { id: "a3", name: "Prensa Francesa 600ml (Plástica)", price: 28990, img: "/french-press-600ml.jpg" },
     { id: "a4", name: "Prensa Francesa 600ml (Metálica)", price: 38990, img: "/french-press-metal-600ml.jpg" },
+    
   ],
 }
 
