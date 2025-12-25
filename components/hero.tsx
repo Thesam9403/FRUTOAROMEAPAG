@@ -30,7 +30,7 @@ export function Hero() {
 
           <p className="text-lg md:text-xl font-light opacity-90 mb-8 text-pretty">
             Desde las montañas de Antioquia, traemos el alma del campo a tu taza.
-            Café lavado y secado con la tradición de nuestra tierra.
+            Llevando lo natural a cada rincón.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
